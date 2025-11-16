@@ -18,57 +18,52 @@
             background: #eaf3ff;
             min-height: 100vh;
             padding: 0;
+            display: flex;
+            flex-direction: column;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px 20px 20px;
+            flex: 1;
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #0d47a1;
+            text-align: center;
+            margin-bottom: 40px;
         }
 
         header {
             background: #0d47a1;
             border-radius: 0;
             box-shadow: none;
-            padding: 30px 0;
+            padding: 20px 0;
             margin-bottom: 40px;
         }
 
         .header-inner {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 40px;
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 0.75rem;
         }
 
         .logo {
             width: 50px;
             height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            margin-right: 0.75rem;
+            fill: white;
         }
 
-        .logo svg {
-            width: 100%;
-            height: 100%;
-        }
-
-        .header-content {
-            flex: 1;
-        }
-
-        h1 {
-            font-size: 2rem;
-            font-weight: 600;
-            margin-bottom: 5px;
-            color: white;
-        }
-
-        .subtitle {
-            font-size: 1rem;
+        .header-title {
+            font-size: 1.2rem;
+            font-weight: bold;
             color: white;
         }
 
@@ -153,20 +148,16 @@
         }
 
         footer {
-            background: #0d47a1;
-            border-radius: 0;
-            box-shadow: none;
-            padding: 20px 0;
-            text-align: center;
+            background-color: #0d47a1;
             color: white;
-            margin-top: 40px;
-            font-size: 0.9rem;
+            padding: 20px 40px;
+            text-align: center;
+            margin-top: auto;
         }
 
-        .footer-inner {
+        .footer-content {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
         }
 
         /* Tablet styles */
@@ -175,8 +166,8 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            h1 {
-                font-size: 1.8rem;
+            .page-title {
+                font-size: 2.2rem;
             }
         }
 
@@ -187,17 +178,14 @@
             }
 
             .header-inner {
-                flex-direction: column;
-                text-align: center;
-                gap: 10px;
+                flex-direction: row;
+                text-align: left;
+                gap: 0.75rem;
+                padding: 0 20px;
             }
 
-            h1 {
-                font-size: 1.5rem;
-            }
-
-            .subtitle {
-                font-size: 0.95rem;
+            .page-title {
+                font-size: 1.8rem;
             }
 
             .projects-grid {
@@ -220,8 +208,12 @@
 
         /* Extra small mobile */
         @media (max-width: 480px) {
-            h1 {
-                font-size: 1.3rem;
+            .page-title {
+                font-size: 1.5rem;
+            }
+
+            .header-title {
+                font-size: 1rem;
             }
 
             .logo {
@@ -238,23 +230,20 @@
 <body>
     <header>
         <div class="header-inner">
-            <div class="logo">
-                <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-                    <path fill="white" d="M368 128c0-44.4-25.4-83.5-64-104C283.5 44.5 262.5 64 256 64s-27.5-19.5-48-40c-38.6 20.5-64 59.6-64 104c0 26.4 8 50.5 21.5 70.7c-7.3 8.8-13.5 18.5-18.3 28.8C116.4 241.5 96 268.8 96 304c0 61.9 50.1 112 112 112h96c61.9 0 112-50.1 112-112c0-35.2-20.4-62.5-51.2-76.5c-4.8-10.3-11-20-18.3-28.8C360 178.5 368 154.4 368 128z"/>
-                    <path fill="rgba(255, 255, 255, 0.8)" d="M304 416h-96c-61.9 0-112-50.1-112-112c0-35.2 20.4-62.5 51.2-76.5c4.8-10.3 11-20 18.3-28.8C152 178.5 144 154.4 144 128h48c0 35.3 28.7 64 64 64s64-28.7 64-64h48c0 26.4-8 50.5-21.5 70.7c7.3 8.8 13.5 18.5 18.3 28.8C395.6 241.5 416 268.8 416 304C416 365.9 365.9 416 304 416z"/>
-                    <circle fill="rgba(0, 0, 0, 0.7)" cx="208" cy="280" r="16"/>
-                    <circle fill="rgba(0, 0, 0, 0.7)" cx="304" cy="280" r="16"/>
-                    <path fill="rgba(0, 0, 0, 0.7)" d="M256 320c-17.7 0-32 14.3-32 32h64C288 334.3 273.7 320 256 320z"/>
-                </svg>
-            </div>
-            <div class="header-content">
-                <h1>kitfox – Intelligent Software</h1>
-                <p class="subtitle">Building innovative solutions</p>
-            </div>
+            <svg class="logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 10 L30 30 L20 25 L15 35 L25 45 L20 60 L30 65 L35 80 L45 75 L50 85 L55 75 L65 80 L70 65 L80 60 L75 45 L85 35 L80 25 L70 30 L50 10 Z" 
+                      fill="none" stroke="white" stroke-width="3"/>
+                <circle cx="40" cy="45" r="3" fill="white"/>
+                <circle cx="60" cy="45" r="3" fill="white"/>
+                <path d="M50 50 Q50 60 50 65" fill="none" stroke="white" stroke-width="2"/>
+                <path d="M45 55 L50 58 L55 55" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <span class="header-title">kitfox – Intelligent Software</span>
         </div>
     </header>
 
     <div class="container">
+        <h1 class="page-title">Building innovative solutions</h1>
 
         <div class="projects-grid">
             <!-- Active Project: Great American Teach-In -->
@@ -273,7 +262,7 @@
     </div>
 
     <footer>
-        <div class="footer-inner">
+        <div class="footer-content">
             <p>&copy; 2025 kitfox. All rights reserved.</p>
         </div>
     </footer>
