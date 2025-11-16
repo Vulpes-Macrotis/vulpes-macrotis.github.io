@@ -17,20 +17,27 @@
             color: #333;
             background: #eaf3ff;
             min-height: 100vh;
-            padding: 20px;
+            padding: 0;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 20px 20px 20px;
         }
 
         header {
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(13, 71, 161, 0.1);
-            padding: 30px;
+            background: #0d47a1;
+            border-radius: 0;
+            box-shadow: none;
+            padding: 30px 0;
             margin-bottom: 40px;
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
             display: flex;
             align-items: center;
             gap: 20px;
@@ -57,12 +64,12 @@
             font-size: 2rem;
             font-weight: 600;
             margin-bottom: 5px;
-            color: #0d47a1;
+            color: white;
         }
 
         .subtitle {
             font-size: 1rem;
-            color: #666;
+            color: white;
         }
 
         .projects-grid {
@@ -146,14 +153,20 @@
         }
 
         footer {
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(13, 71, 161, 0.1);
-            padding: 20px;
+            background: #0d47a1;
+            border-radius: 0;
+            box-shadow: none;
+            padding: 20px 0;
             text-align: center;
-            color: #0d47a1;
+            color: white;
             margin-top: 40px;
             font-size: 0.9rem;
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
         /* Tablet styles */
@@ -170,10 +183,10 @@
         /* Mobile styles */
         @media (max-width: 767px) {
             body {
-                padding: 15px;
+                padding: 0;
             }
 
-            header {
+            .header-inner {
                 flex-direction: column;
                 text-align: center;
                 gap: 10px;
@@ -223,22 +236,25 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
+    <header>
+        <div class="header-inner">
             <div class="logo">
                 <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-                    <path fill="#FF6B35" d="M368 128c0-44.4-25.4-83.5-64-104C283.5 44.5 262.5 64 256 64s-27.5-19.5-48-40c-38.6 20.5-64 59.6-64 104c0 26.4 8 50.5 21.5 70.7c-7.3 8.8-13.5 18.5-18.3 28.8C116.4 241.5 96 268.8 96 304c0 61.9 50.1 112 112 112h96c61.9 0 112-50.1 112-112c0-35.2-20.4-62.5-51.2-76.5c-4.8-10.3-11-20-18.3-28.8C360 178.5 368 154.4 368 128z"/>
-                    <path fill="#D84315" d="M304 416h-96c-61.9 0-112-50.1-112-112c0-35.2 20.4-62.5 51.2-76.5c4.8-10.3 11-20 18.3-28.8C152 178.5 144 154.4 144 128h48c0 35.3 28.7 64 64 64s64-28.7 64-64h48c0 26.4-8 50.5-21.5 70.7c7.3 8.8 13.5 18.5 18.3 28.8C395.6 241.5 416 268.8 416 304C416 365.9 365.9 416 304 416z"/>
-                    <circle fill="#263238" cx="208" cy="280" r="16"/>
-                    <circle fill="#263238" cx="304" cy="280" r="16"/>
-                    <path fill="#263238" d="M256 320c-17.7 0-32 14.3-32 32h64C288 334.3 273.7 320 256 320z"/>
+                    <path fill="white" d="M368 128c0-44.4-25.4-83.5-64-104C283.5 44.5 262.5 64 256 64s-27.5-19.5-48-40c-38.6 20.5-64 59.6-64 104c0 26.4 8 50.5 21.5 70.7c-7.3 8.8-13.5 18.5-18.3 28.8C116.4 241.5 96 268.8 96 304c0 61.9 50.1 112 112 112h96c61.9 0 112-50.1 112-112c0-35.2-20.4-62.5-51.2-76.5c-4.8-10.3-11-20-18.3-28.8C360 178.5 368 154.4 368 128z"/>
+                    <path fill="rgba(255, 255, 255, 0.8)" d="M304 416h-96c-61.9 0-112-50.1-112-112c0-35.2 20.4-62.5 51.2-76.5c4.8-10.3 11-20 18.3-28.8C152 178.5 144 154.4 144 128h48c0 35.3 28.7 64 64 64s64-28.7 64-64h48c0 26.4-8 50.5-21.5 70.7c7.3 8.8 13.5 18.5 18.3 28.8C395.6 241.5 416 268.8 416 304C416 365.9 365.9 416 304 416z"/>
+                    <circle fill="rgba(0, 0, 0, 0.7)" cx="208" cy="280" r="16"/>
+                    <circle fill="rgba(0, 0, 0, 0.7)" cx="304" cy="280" r="16"/>
+                    <path fill="rgba(0, 0, 0, 0.7)" d="M256 320c-17.7 0-32 14.3-32 32h64C288 334.3 273.7 320 256 320z"/>
                 </svg>
             </div>
             <div class="header-content">
                 <h1>kitfox – Intelligent Software</h1>
                 <p class="subtitle">Building innovative solutions</p>
             </div>
-        </header>
+        </div>
+    </header>
+
+    <div class="container">
 
         <div class="projects-grid">
             <!-- Active Project: Great American Teach-In -->
@@ -254,10 +270,12 @@
         <div class="coming-soon">
             More projects coming soon
         </div>
-
-        <footer>
-            <p>&copy; 2025 kitfox. All rights reserved.</p>
-        </footer>
     </div>
+
+    <footer>
+        <div class="footer-inner">
+            <p>&copy; 2025 kitfox. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
